@@ -55,6 +55,13 @@ class Solution {
     if (head == null)
       return null;
     head.next = removeNodes(head.next);
+    // if(head.next != null && head.val < head.next.val){
+    //     return head.next;
+    // }
+    // else{
+    //     return head;
+    // }
+    // if else ko return statement m likh diya hai      
     return head.next != null && head.val < head.next.val ? head.next : head;
   }
 }
