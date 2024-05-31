@@ -28,6 +28,7 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             ans=ans^nums[i];
         }
+        // jo ans aaya hai uska mask find kr lennge
         int mask = ans & (~(ans-1));
         int[] res = new int[2];
         int a=0;
