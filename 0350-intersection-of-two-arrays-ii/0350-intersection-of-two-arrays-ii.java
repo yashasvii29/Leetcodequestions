@@ -6,6 +6,8 @@ class Solution {
         HashMap<Integer,Integer> map=new HashMap<>();
         for(int i=0;i<nums1.length;i++){
             if(map.containsKey(nums1[i])){
+                // if element exist krta hai toh uski frequency ko +1 kr denge
+                // get method m key pass krte hai to get the value of that key
                 map.put(nums1[i],map.get(nums1[i])+1);
             }
             else{
