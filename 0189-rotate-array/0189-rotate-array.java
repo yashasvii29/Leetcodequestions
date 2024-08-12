@@ -7,7 +7,7 @@ class Solution {
     }
     public void reverse(int[] arr,int s,int e)
     {
-        while(s<=e)
+        while(s<e)
         {
             int t=arr[s];
             arr[s]=arr[e];
