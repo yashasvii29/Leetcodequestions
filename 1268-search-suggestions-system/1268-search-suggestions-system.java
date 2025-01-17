@@ -1,6 +1,7 @@
 class Solution {
     public List<List<String>> suggestedProducts(String[] products, String searchWord) {
         List<List<String>> ans = new ArrayList<>();
+        // sort the products array lexicographically(in ascending order)
         for(int i=0;i<products.length;i++){
          
             for(int j=i+1;j<products.length;j++){
