@@ -5,6 +5,7 @@ class Solution {
         Stack<Integer> st = new Stack<>();
 
         for (int a : asteroids) {
+            // iss que m negative integer ke liye condition apply krenge
             while (!st.isEmpty() && a < 0 && st.peek() > 0) {
                 int sum = a + st.peek();
                 if (sum < 0) {
