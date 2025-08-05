@@ -38,29 +38,35 @@ class Solution {
 
 
  int k = primes.length;
-        long[] dp = new long[n];           // Use long
-        int[] indices = new int[k];
-        long[] values = new long[k];       // Use long
+        long[] dp = new long[n];  // dp[i] stores the i-th super ugly number          // Use long
+        int[] indices = new int[k];    // pointers for each prime
+        long[] values = new long[k];   // current prime multiples     // Use long
 
-        dp[0] = 1;
+        dp[0] = 1;    // First super ugly number is always 1
 
+
+          // Initialize values with primes (1 * prime)
         for (int i = 0; i < k; i++) {
             values[i] = primes[i];
         }
 
         for (int i = 1; i < n; i++) {
-            long next = Long.MAX_VALUE;
+
+             // Get the minimum among all current prime multiples
+            long min = Long.MAX_VALUE;
 
             for (long val : values) {
-                if (val < next) {
-                    next = val;
+                if (val < min) {
+                    min = val;
                 }
             }
 
-            dp[i] = next;
+            dp[i] = min;
 
+
+             // Update all primes that match the minimum
             for (int j = 0; j < k; j++) {
-                if (values[j] == next) {
+                if (values[j] == min) {
                     indices[j]++;
                     values[j] = dp[indices[j]] * primes[j];
                 }
