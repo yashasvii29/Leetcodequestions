@@ -1,5 +1,11 @@
 class Solution {
+    // time complexity and space complexity is m*n 
+    // logic of code 
+//     We traverse the entire grid.
 
+// Whenever we find a land cell ('1') that is not visited, it means we discovered a new island and will icrease the count of island.
+
+// Then we perform DFS to visit all connected land cells means neighbour of that vertex or node of that island and mark them visited so they are not counted again.
     int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};
 
     public int numIslands(char[][] grid) {
@@ -39,3 +45,14 @@ class Solution {
         }
     }
 }
+// Count number of connected components in a graph means count number of islands in a graph
+// Treat grid as a graph.
+
+// Iterate through all vertices.
+
+// If vertex = '1' and not visited
+// → start DFS traversal.
+
+// DFS explores the entire connected component.
+
+// Increase island count.
