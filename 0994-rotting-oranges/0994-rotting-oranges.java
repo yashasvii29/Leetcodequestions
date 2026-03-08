@@ -19,7 +19,7 @@ class Solution {
                 if (grid[i][j] == 1) {
                     freshOranges++;
                 } else if (grid[i][j] == 2) {
-                    q.offer(new int[] { i, j });
+                    q.add(new int[] { i, j });
                 }
             }
         }
@@ -45,7 +45,7 @@ class Solution {
                     if (x >= 0 && y >= 0 && x < rows && y < cols && grid[x][y] == 1) {
                         grid[x][y] = 2;
                         freshOranges--;
-                        q.offer(new int[] { x, y });
+                        q.add(new int[] { x, y });
                     }
                 }
             }
