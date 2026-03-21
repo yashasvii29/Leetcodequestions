@@ -9,16 +9,16 @@ class Solution {
         boolean[][] pacific  = new boolean[rows][cols];
         boolean[][] atlantic = new boolean[rows][cols];
         
-          // Start DFS from Pacific borders (top row + left col)
+          
         for (int i = 0; i < rows; i++) {
-            dfs(heights, pacific,  i, 0);        // left column
-            dfs(heights, atlantic, i, cols - 1); // right column
+            dfs(heights, pacific,  i, 0);        // left column // pacific
+            dfs(heights, atlantic, i, cols - 1); // right column  // atlantic
         }
 
-        // Start DFS from Atlantic borders (bottom row + right col)
+       
         for (int j = 0; j < cols; j++) {
-            dfs(heights, pacific,  0, j);        // top row
-            dfs(heights, atlantic, rows - 1, j); // bottom row
+            dfs(heights, pacific,  0, j);        // top row  //pacific
+            dfs(heights, atlantic, rows - 1, j); // bottom row  //atlantic
         }
 
         // Collect cells reachable by BOTH oceans
