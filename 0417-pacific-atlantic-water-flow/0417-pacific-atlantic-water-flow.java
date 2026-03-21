@@ -70,3 +70,35 @@ class Solution {
 // Atlantic Ocean touches BOTTOM and RIGHT borders
 
 // Find all cells from which water can reach BOTH oceans
+
+
+// ### Key Points
+// ```
+// 1. Reverse thinking → DFS FROM ocean instead of TO ocean
+// 2. Pacific  starts from top row + left col
+// 3. Atlantic starts from bottom row + right col
+// 4. Reverse flow condition → heights[nr][nc] >= heights[r][c]
+//    (going uphill in reverse = going downhill forward)
+// 5. Two separate boolean arrays track each ocean
+// 6. Final answer = cells where both arrays are true
+// 7. Time  = O(m*n) — each cell visited at most twice
+// 8. Space = O(m*n) — two boolean arrays
+
+
+
+// Instead of asking:
+// "Can water flow FROM this cell TO ocean?"
+
+// Ask the reverse:
+// "Can water flow FROM ocean TO this cell?"
+
+// Why reverse?
+// → Water flows DOWN (high to low)
+// → Reversed = water flows UP (low to high)
+// → Start BFS/DFS from ocean borders
+// → Mark all reachable cells
+
+// Pacific  reachable = start from TOP + LEFT borders
+// Atlantic reachable = start from BOTTOM + RIGHT borders
+
+// Answer = cells reachable by BOTH 
